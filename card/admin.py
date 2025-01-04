@@ -1,4 +1,4 @@
-from . models import Programmers, Category, Projects
+from . models import    Programmers, Category, Projects
 from django.contrib import admin
 
 @admin.register(Programmers)
@@ -23,7 +23,7 @@ class ProgrammersAdmin(admin.ModelAdmin):
             'fields': ('joined',)
         }),
     )
-    readonly_fields = ('joined','name', 'last_name', 'id')
+    readonly_fields = ('joined', 'id')
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('id', 'title')

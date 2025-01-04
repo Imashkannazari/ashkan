@@ -19,5 +19,12 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('card.urls'))
+    path('', include('card.urls')),
+    path('', include('home.urls'))
 ]
+from django.shortcuts import render
+
+def custom_404_view(request, exception):
+    return render(request, 'home/404.html', status=404)
+
+handler404 = custom_404_view
